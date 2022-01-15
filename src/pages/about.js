@@ -4,13 +4,13 @@ import Layout from '../../components/layout'
 import { StaticImage } from 'gatsby-plugin-image'
 
 // Step 2: Define your component
-const IndexPage = () => {
+const AboutPage = () => {
   return (
-    <Layout pageTitle="Home">
-      <p>Welcome to Emily-Rose Design.</p>
+    <Layout pageTitle="About Me">
+      <p>My name is Emily.</p>
     </Layout>
   )
 }
 
 // Step 3: Export your component
-export default IndexPage
+export default AboutPage
