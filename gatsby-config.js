@@ -4,6 +4,8 @@ module.exports = {
         title: "Emily-Rose Design"
     },
     plugins: [
-        "gatsby-plugin-sass"
+        "gatsby-plugin-sass",
+        "gatsby-plugin-image",
+        "gatsby-plugin-sharp"
     ]
 };

@@ -1,0 +1,39 @@
+.erd-header {
+    background-color: #706F6F;
+    text-align: center;
+    padding-top:20px;
+    color: #FFF;
+}
+
+.erd-logo-container {
+    position: relative;
+    text-align: center;
+    color: white;
+    width: 354px;
+    height: 354px;
+    margin-left:auto;
+    margin-right:auto;
+
+
+    .erd-logo {
+        width: 354px;
+        height: 354px;
+        margin-left:auto;
+        margin-right:auto;
+    }    
+
+    @media (max-width: 576px) {
+        .erd-logo-copy-desktop {
+            position: relative;
+            top:-12%;
+        }
+    }
+
+    @media (min-width: 576px) {
+        .erd-logo-copy-desktop {
+            position: absolute;
+            bottom: 80px;
+            right: -145px;
+        }
+    }
+}

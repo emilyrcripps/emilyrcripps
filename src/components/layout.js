@@ -1,20 +1,19 @@
 import * as React from 'react'
 import { container } from './layout.module.css'
-import styles from './layout.module.scss'
+import * as styles from './layout.module.scss'
+import Header from './header'
 
 const Layout = ({ pageTitle, children }) => {
     const title = "Emily-Rose Design";
 
   return (
-    <div className={container}>
+    <div>
       <title>{pageTitle} | {title}</title>
-      <header>{title}</header>
-      <nav>
-        
-      </nav>
       <main>
-        <h1>{pageTitle}</h1>
-        {children}
+        <Header/>
+        <div className={styles.mainContainer}>
+          {children}
+        </div>
       </main>
     </div>
   )
