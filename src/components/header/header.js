@@ -1,11 +1,11 @@
 import * as React from 'react'
-import logo from './images/logo-small.png'
+import logo from './logo-small.png'
 import * as styles from './header.module.scss'
 
 const Header = () => {
   return (
     <div className={styles.erdHeader}>
-      <div class="container">
+      <div className="container">
         <div className={styles.erdLogoContainer}>
             <img
                 className={styles.erdLogo}
