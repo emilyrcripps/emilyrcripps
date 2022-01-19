@@ -5,8 +5,9 @@ import * as styles from './layout.module.scss'
 import Header from './header/header'
 
 import TextMediaSplit from './text-media-split/text-media-split.js'
+import ImageBar from './image-bar/image-bar.js'
 
-const shortcodes = { TextMediaSplit }
+const shortcodes = { TextMediaSplit, ImageBar }
 
 const Layout = ({ children, pageContext }) => {
   const { pageTitle } = pageContext.frontmatter;
@@ -26,7 +27,7 @@ const Layout = ({ children, pageContext }) => {
       <title>{ pageTitle } | {data.site.siteMetadata.title}</title>
       <main>
         <Header/>
-        <div className={`container ${styles.mainContainer}`}>
+        <div className={styles.mainContainer}>
           <MDXProvider components={ shortcodes } localImages={pageContext.frontmatter.embeddedImagesLocal}>{children}</MDXProvider>
         </div>
       </main>
