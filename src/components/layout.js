@@ -26,8 +26,6 @@ const Layout = ({ children, pageContext }) => {
     }
   `)
 
-    console.log(pageTitle);
-
   return (
     <div>
       <title>{ pageTitle } | {data.site.siteMetadata.title}</title>

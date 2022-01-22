@@ -88,11 +88,13 @@ const Header = () => {
       <div className="container">
         <div className={styles.erdLogoWrapper}>
           <div className={styles.erdLogoContainer}>
-              <img
-                  className={styles.erdLogo}
-                  alt="Emily-Rose Design"
-                  src={logo}
-              />
+              <Link to="/">
+                <img
+                    className={styles.erdLogo}
+                    alt="Emily-Rose Design"
+                    src={logo}
+                />
+              </Link>
               <span className={styles.erdLogoCopyDesktop}>Graphic Design and Illustration</span>
           </div>
           <MenuIcon nav={nav} onClick={() => showNav(!nav)}>
@@ -105,8 +107,8 @@ const Header = () => {
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About</Link></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><Link to="/portfolio">Portfolio</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
         </MenuLinks>
       </div>
