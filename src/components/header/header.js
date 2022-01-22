@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import logo from './logo-small.png'
 import * as styles from './header.module.scss'
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 
 const MenuIcon = styled.button`
   display: flex;
@@ -102,10 +103,9 @@ const Header = () => {
         </div>
         <MenuLinks nav={nav}>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About</Link></li>
             <li><a href="#">Blog</a></li>
-            <li><a href="#">Portfolio</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
         </MenuLinks>
