@@ -1,0 +1,48 @@
+.erd-header {
+    background-color: #706F6F;
+    text-align: center;
+    padding-top:20px;
+    color: #FFF;
+
+    /*-moz-box-shadow:    inset 0px -15px 10px -15px #666666;
+    -webkit-box-shadow: inset 0px -15px 10px -15px #666666;
+    box-shadow:         inset 0px -15px 10px -5px #666666;*/
+
+}
+
+.erd-logo-wrapper {
+    position:relative;
+}
+
+.erd-logo-container {
+    position: relative;
+    text-align: center;
+    color: white;
+    width: 354px;
+    height: 354px;
+    margin-left:auto;
+    margin-right:auto;
+
+
+    .erd-logo {
+        width: 354px;
+        height: 354px;
+        margin-left:auto;
+        margin-right:auto;
+    }    
+
+    @media (max-width: 575px) {
+        .erd-logo-copy-desktop {
+            position: relative;
+            top:-12%;
+        }
+    }
+
+    @media (min-width: 576px) {
+        .erd-logo-copy-desktop {
+            position: absolute;
+            bottom: 80px;
+            right: -145px;
+        }
+    }
+}
