@@ -3,7 +3,7 @@ import React, { useMemo } from 'react'
 import * as styles from './text-media-split.module.scss'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-const TextMediaSplit = ({ imagePath, imageAlt, children }) => {
+const TextMediaSplit = ({ imagePath, imageAlt, reverseLayout, children }) => {
   
   const data = useStaticQuery(graphql`
     query {
@@ -13,6 +13,7 @@ const TextMediaSplit = ({ imagePath, imageAlt, children }) => {
               relativePath
               childImageSharp {
                 gatsbyImageData(
+                  width: 700
                   placeholder: BLURRED
                   formats: [AUTO, WEBP, AVIF]
                 )
@@ -22,7 +23,7 @@ const TextMediaSplit = ({ imagePath, imageAlt, children }) => {
         }
       }
     `);
-    
+
   const match = useMemo(() => (
     data.allFile.edges.find(({ node }) => imagePath === node.relativePath)
   ), [ data, imagePath ]);
@@ -32,12 +33,19 @@ const TextMediaSplit = ({ imagePath, imageAlt, children }) => {
   return (
     <div className={`container ${styles.componentContainer}`}>
       <div className="row">
-        <div className="col-lg-6">
-          <GatsbyImage image={image} alt={imageAlt} />
-        </div>
+        { reverseLayout !== "true" && 
+          <div className="col-lg-6">
+            <GatsbyImage image={image} alt={imageAlt} />
+          </div>
+        }
         <div className="col-lg-6">
           {children}
         </div>
+        { reverseLayout === "true" && 
+          <div className="col-lg-6">
+            <GatsbyImage image={image} alt={imageAlt} />
+          </div>
+        }
       </div>
     </div>
   )
