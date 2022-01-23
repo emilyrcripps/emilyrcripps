@@ -1,10 +1,69 @@
 .erd-footer {
-    background-color: #706F6F;
-    padding:50px;
-    color: #FFF;
+    background-color: #FFF;
+    color: #000;
+
+    text-align: center;
+
+    height: 220px;
+
+    display:flex;
+
+    justify-content: center;
 
     /*-moz-box-shadow:    inset 0px -15px 10px -15px #666666;
     -webkit-box-shadow: inset 0px -15px 10px -15px #666666;
     box-shadow:         inset 0px -15px 10px -5px #666666;*/
 
+}
+
+.thorns-desktop-left {
+    height: 220px;
+    width: 594px;
+    background-image: url(./images/left-thorns-set.jpg);
+    background-position: top;
+}
+
+.thorns-desktop-right {
+    height: 220px;
+    width: 556px;
+    background-image: url(./images/right-thorns-set.jpg);
+    background-position: top;
+}
+
+.footer-content {
+    text-align:center;
+    padding: 50px 10px 0px 10px;
+    height: 220px;
+    min-width: 270px;
+
+
+
+    ul {
+        margin: 0px;
+        padding: 10px 0px 20px 0px;
+        list-style-type:none;
+
+        li {
+            display:inline;
+
+            a {
+                padding: 10px;
+                text-decoration:none;
+            }
+
+            a:hover img {
+                filter:brightness(120%);
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-content {
+        width:100%;
+
+        background-image: 
+            linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5) ),
+            url(./images/left-thorns-set.jpg);
+    }
 }
