@@ -3,6 +3,7 @@ import logo from './logo-small.png'
 import * as styles from './header.module.scss'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const MenuIcon = styled.button`
   display: flex;
@@ -69,18 +70,22 @@ const MenuLinks = styled.nav`
     list-style-type:none;
   }
 
-  li {
-    margin-top: 1rem;
-  }
-
   a {
     text-decoration: none;
     color: #000;
     font-size: 1.5rem;
-    transition: color 300ms;
+    transition: all 300ms;
+    display:block;
+    width:200px;
+    padding:15px;
+    margin:0px;
 
     :hover {
       color: #FFF;
+      text-decoration: underline;
+      text-decoration-thickness: 5px;
+      text-decoration-color: #5fc0c5;
+      background-color:#000;
     }
   }
 `
@@ -154,10 +159,10 @@ const Header = () => {
           </MenuIcon>
         <MenuLinks nav={nav}>
           <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/portfolio">Portfolio</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
+            <li><AniLink paintDrip hex="#5fc0c5" duration={0.6} to="/">Home</AniLink></li>
+            <li><AniLink paintDrip hex="#5fc0c5" duration={0.6} to="/about">About</AniLink></li>
+            <li><AniLink paintDrip hex="#5fc0c5" duration={0.6} to="/portfolio">Portfolio</AniLink></li>
+            <li><AniLink paintDrip hex="#5fc0c5" duration={0.6} to="/contact">Contact</AniLink></li>
           </ul>
         </MenuLinks>
       </div>

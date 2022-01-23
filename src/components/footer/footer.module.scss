@@ -49,10 +49,13 @@
             a {
                 padding: 10px;
                 text-decoration:none;
+                font-size: 2.5em;
+                color: #706F6F;
+                transition: color 300ms;
             }
 
-            a:hover img {
-                filter:brightness(120%);
+            a:hover {
+                color: #464646;
             }
         }
     }

@@ -1,13 +1,18 @@
 module.exports = {
     siteMetadata: {
         siteUrl: "https://www.yourdomain.tld",
-        title: "Emily-Rose Design"
+        title: "Emily-Rose Design",
+        instagramUrl: "https://www.instagram.com/emilyrcrippsdesign/",
+        twitterUrl: "https://twitter.com/crippsie_design",
+        linkedInUrl: "https://www.linkedin.com/in/emily-rose-cripps-0840b8205/",
+        wordpressUrl: "https://emilyrosegraphicsblog.wordpress.com/"
     },
     plugins: [
         "gatsby-plugin-sass",
         "gatsby-plugin-image",
         "gatsby-transformer-sharp",
         "gatsby-plugin-react-helmet",
+        "gatsby-plugin-transition-link",
         {
             resolve: "gatsby-plugin-mdx",
             options: {
