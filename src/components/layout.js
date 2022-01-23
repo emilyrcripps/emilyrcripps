@@ -11,8 +11,10 @@ import ImageBar from './image-bar/image-bar.js'
 import TextArea from './text-area/text-area.js'
 import TextColumn from './text-column/text-column.js'
 import FullImage from './full-image/full-image.js'
+import NavigationTiles from './navigation-tiles/navigation-tiles.js'
+import NavigationTile from './navigation-tiles/navigation-tile.js'
 
-const shortcodes = { TextMediaSplit, ImageBar, TextArea, TextColumn, FullImage }
+const shortcodes = { TextMediaSplit, ImageBar, TextArea, TextColumn, FullImage, NavigationTiles, NavigationTile }
 
 const Layout = ({ children, pageContext }) => {
   const { pageTitle } = pageContext.frontmatter;
