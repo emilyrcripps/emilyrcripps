@@ -17,7 +17,7 @@ const MenuIcon = styled.button`
 
   position: absolute;
   top: 30px;
-  right: 10px;
+  right: 50px;
 
   div {
     width: 1.5rem;
@@ -50,14 +50,20 @@ const MenuLinks = styled.nav`
   align-items: center;
   text-align: center;
   height: 100vh;
-  width: 100vw;
-  background: #000;
+  background: #5fc0c5;
   position: absolute;
   top: 0;
   right: 0;
   z-index: 100;
   transition: transform 300ms;
   transform: ${({nav}) => nav ? "translateX(0)" : "translateX(100%)"};
+
+  @media screen and (max-width: 575px) {
+    width: 100vw;
+  }
+  @media screen and (min-width: 576px) {
+    width: 390px;
+  }
 
   ul {
     list-style-type:none;
@@ -69,12 +75,12 @@ const MenuLinks = styled.nav`
 
   a {
     text-decoration: none;
-    color: #FFF;
+    color: #000;
     font-size: 1.5rem;
     transition: color 300ms;
 
     :hover {
-      color: #5fc0c5;
+      color: #FFF;
     }
   }
 `
@@ -97,12 +103,13 @@ const Header = () => {
               </Link>
               <span className={styles.erdLogoCopyDesktop}>Graphic Design and Illustration</span>
           </div>
-          <MenuIcon nav={nav} onClick={() => showNav(!nav)}>
+
+        </div>
+        <MenuIcon nav={nav} onClick={() => showNav(!nav)}>
             <div />
             <div />
             <div />
           </MenuIcon>
-        </div>
         <MenuLinks nav={nav}>
           <ul>
             <li><Link to="/">Home</Link></li>

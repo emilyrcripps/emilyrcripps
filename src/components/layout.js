@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import * as styles from './layout.module.scss'
 import Header from './header/header'
 import Footer from './footer/footer'
+import { Helmet } from "react-helmet"
 
 import TextMediaSplit from './text-media-split/text-media-split.js'
 import ImageBar from './image-bar/image-bar.js'
@@ -28,7 +29,11 @@ const Layout = ({ children, pageContext }) => {
 
   return (
     <div>
-      <title>{ pageTitle } | {data.site.siteMetadata.title}</title>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{ pageTitle } | {data.site.siteMetadata.title}</title>
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'/>
+      </Helmet>
       <main>
         <Header/>
         <div className={styles.mainContainer}>

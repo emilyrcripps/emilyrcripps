@@ -34,7 +34,7 @@
     text-align:center;
     padding: 50px 10px 0px 10px;
     height: 220px;
-    min-width: 270px;
+    width: 350px;
 
 
 
@@ -65,5 +65,7 @@
         background-image: 
             linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5) ),
             url(./images/left-thorns-set.jpg);
+
+        background-position:top center;
     }
 }
