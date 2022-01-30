@@ -28,7 +28,8 @@ const Footer = () => {
           <li><a href={data.site.siteMetadata.linkedInUrl} target="_blank" name="LinkedIn"><FontAwesomeIcon icon={faLinkedin}/></a></li>
           <li><a href={data.site.siteMetadata.wordpressUrl} target="_blank" name="Blog"><FontAwesomeIcon icon={faWordpressSimple}/></a></li>
         </ul>
-        <span>&copy; Emily-Rose Cripps {(new Date().getFullYear())}</span>
+        <span>&copy; Emily-Rose Cripps {(new Date().getFullYear())}</span><br/>
+        <span><a href="/privacy-policy">Privacy Policy</a></span>
       </div>
       <div className={`d-none d-md-block ${styles.thornsDesktopRight}`}></div>
     </footer>

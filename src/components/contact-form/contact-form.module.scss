@@ -1,0 +1,35 @@
+.contact-form {
+    input, textarea {
+        display:block;
+        width:100%;
+        padding:5px;
+        margin:10px 0px 10px 0px;
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+        border-bottom: 3px solid #5fc0c5;
+    }
+
+    input:focus, textarea:focus, select:focus{
+        outline: none;
+    }
+
+    button {
+        padding: 10px 20px 10px 20px;
+        color: #FFF;
+        text-decoration: none;
+        background-color:#000;
+        transition: all 0.3s ease-out;
+        border: 2px solid #000;
+        float: right;
+    }
+
+    button:hover {
+        text-decoration: underline;
+        text-decoration-color: #5fc0c5;
+        color: #000;
+        background-color: #FFF;
+        text-decoration-thickness: 5px;
+        border-color: #5fc0c5;
+    }
+}

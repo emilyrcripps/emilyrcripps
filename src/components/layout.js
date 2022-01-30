@@ -14,8 +14,11 @@ import TextColumn from './text-column/text-column.js'
 import FullImage from './full-image/full-image.js'
 import NavigationTiles from './navigation-tiles/navigation-tiles.js'
 import NavigationTile from './navigation-tiles/navigation-tile.js'
+import ImageCanvas from './image-canvas/image-canvas.js'
+import PositionedImage from './positioned-image/positioned-image.js'
+import ContactForm from './contact-form/contact-form.js'
 
-const shortcodes = { TextMediaSplit, ImageBar, TextArea, TextColumn, FullImage, NavigationTiles, NavigationTile }
+const shortcodes = { TextMediaSplit, ImageBar, TextArea, TextColumn, FullImage, NavigationTiles, NavigationTile, ImageCanvas, PositionedImage, ContactForm }
 
 const Layout = ({ children, pageContext }) => {
   const { pageTitle } = pageContext.frontmatter;
@@ -35,7 +38,11 @@ const Layout = ({ children, pageContext }) => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>{ pageTitle } | {data.site.siteMetadata.title}</title>
-        <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'/>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Vidaloka&display=swap" rel="stylesheet" />
+
         <meta name="icon" href="images/icon.png" />
       </Helmet>
       <main>
