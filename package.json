@@ -12,8 +12,7 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "deploy": "gatsby build && gh-pages -d public -b main"
+    "clean": "gatsby clean"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -43,8 +42,5 @@
     "react-helmet": "^6.1.0",
     "sass": "^1.48.0",
     "styled-components": "^5.3.3"
-  },
-  "devDependencies": {
-    "gh-pages": "^3.2.3"
   }
 }
