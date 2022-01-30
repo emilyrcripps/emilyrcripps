@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
         siteUrl: "https://www.yourdomain.tld",
-        title: "Emily-Rose Design",
+        title: "Emily-Rose Cripps Design",
         instagramUrl: "https://www.instagram.com/emilyrcrippsdesign/",
         twitterUrl: "https://twitter.com/crippsie_design",
         linkedInUrl: "https://www.linkedin.com/in/emily-rose-cripps-0840b8205/",
@@ -50,6 +50,12 @@ module.exports = {
                 webpOptions: {},
                 avifOptions: {},
               },
+            },
+        },
+        {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+              icon: 'src/images/icon.png',
             },
         },
         "gatsby-plugin-styled-components"

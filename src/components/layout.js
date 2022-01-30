@@ -5,6 +5,7 @@ import * as styles from './layout.module.scss'
 import Header from './header/header'
 import Footer from './footer/footer'
 import { Helmet } from "react-helmet"
+import favicon from '../../src/images/icon.png'
 
 import TextMediaSplit from './text-media-split/text-media-split.js'
 import ImageBar from './image-bar/image-bar.js'
@@ -35,6 +36,7 @@ const Layout = ({ children, pageContext }) => {
         <meta charSet="utf-8" />
         <title>{ pageTitle } | {data.site.siteMetadata.title}</title>
         <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'/>
+        <meta name="icon" href="images/icon.png" />
       </Helmet>
       <main>
         <Header/>

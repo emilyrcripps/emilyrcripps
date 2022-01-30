@@ -119,23 +119,25 @@ const Header = () => {
 
   const [nav, showNav] = useState(false);
 
-  const [isLogoAnimated, animateLogo] = useState(sessionStorage.getItem( 'isLogoAnimated' ) || false);
+  const [isLogoAnimated, animateLogo] = useState(false);
+  const [isLogoCopyAnimated, animateLogoCopy] = useState(false);
 
-  if (!isLogoAnimated || isLogoAnimated === false) {
+  //const [isLogoAnimated, animateLogo] = useState(window.sessionStorage.getItem( 'isLogoAnimated' ) || false);
+  //const [isLogoCopyAnimated, animateLogoCopy] = useState(window.sessionStorage.getItem( 'isLogoCopyAnimated' ) || false);
+
+  /*if (!isLogoAnimated || isLogoAnimated === false) {
     setTimeout(function() {
       animateLogo(true);
-      sessionStorage.setItem('isLogoAnimated', true );
+      window.sessionStorage.setItem('isLogoAnimated', true );
     }, 600)
-  }
+  }*/
 
-  const [isLogoCopyAnimated, animateLogoCopy] = useState(sessionStorage.getItem( 'isLogoCopyAnimated' ) || false);
-
-  if (!isLogoCopyAnimated || isLogoCopyAnimated === false) {
+  /*if (!isLogoCopyAnimated || isLogoCopyAnimated === false) {
     setTimeout(function() {
       animateLogoCopy(true);
-      sessionStorage.setItem('isLogoCopyAnimated', true );
+      window.sessionStorage.setItem('isLogoCopyAnimated', true );
     }, 1000)
-  }
+  }*/
 
   return (
     <div className={styles.erdHeader}>
@@ -143,12 +145,12 @@ const Header = () => {
         <div className={styles.erdLogoWrapper}>
           <div className={styles.erdLogoContainer}>
               <Link to="/">
-                <LogoImg isLogoAnimated={isLogoAnimated}
+                <LogoImg isLogoAnimated={true}
                     alt="Emily-Rose Design"
                     src={logo}
                 />
               </Link>
-              <LogoCopy isLogoCopyAnimated={isLogoCopyAnimated}>Graphic Design and Illustration</LogoCopy>
+              <LogoCopy isLogoCopyAnimated={true}>Graphic Design and Illustration</LogoCopy>
           </div>
 
         </div>
