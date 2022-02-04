@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-        siteUrl: "https://www.yourdomain.tld",
+        siteUrl: "https://www.emilyrcripps.com",
         title: "Emily-Rose Cripps Design",
         instagramUrl: "https://www.instagram.com/emilyrcrippsdesign/",
         twitterUrl: "https://twitter.com/crippsie_design",
@@ -58,6 +58,7 @@ module.exports = {
               icon: 'src/images/icon.png',
             },
         },
-        "gatsby-plugin-styled-components"
+        "gatsby-plugin-styled-components",
+        "gatsby-plugin-sitemap"
     ]
 };

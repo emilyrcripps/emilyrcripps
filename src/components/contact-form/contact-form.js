@@ -17,6 +17,7 @@ const ContactForm = () => {
         <label for="txtMessage">Message:</label>
         <textarea name="message" id="txtMessage" required />
       </div>
+      <a target="_blank" href="/privacy-policy">Privacy Policy</a>
       <button type="submit">Submit</button>
     </form>
   )

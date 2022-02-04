@@ -46,24 +46,26 @@ const ImageBar = ({ imageOnePath, imageOneAlt, imageTwoPath, imageTwoAlt, imageT
   let imageFour = getImage(matchFour.node.childImageSharp);
 
   return (
-    <div className={`row ${styles.componentContainer}`}>
-      <div className={`col-md-12 col-lg-6 ${styles.padding0}`}>
-        <div className="row">
-          <div className={`col-6 col-sm-6 col-md-6 ${styles.padding0}`}>
-            <GatsbyImage image={imageOne} alt={imageOneAlt} />
-          </div>
-          <div className={`col-6 col-sm-6 col-md-6 ${styles.padding0}`}>
-            <GatsbyImage image={imageTwo} alt={imageTwoAlt} />
+    <div className="container">
+      <div className={`row ${styles.componentContainer}`}>
+        <div className={`col-md-12 col-lg-6`}>
+          <div className="row">
+            <div className={`col-6 col-sm-6 col-md-6`}>
+              <GatsbyImage image={imageOne} alt={imageOneAlt} />
+            </div>
+            <div className={`col-6 col-sm-6 col-md-6`}>
+              <GatsbyImage image={imageTwo} alt={imageTwoAlt} />
+            </div>
           </div>
         </div>
-      </div>
-      <div className={`col-md-12 col-lg-6 ${styles.padding0}`}>
-        <div className="row">
-          <div className={`col-6 col-sm-6 col-md-6 ${styles.padding0}`}>
-            <GatsbyImage image={imageThree} alt={imageThreeAlt} />
-          </div>
-          <div className={`col-6 col-sm-6 col-md-6 ${styles.padding0}`}>
-            <GatsbyImage image={imageFour} alt={imageFourAlt} />
+        <div className={`col-md-12 col-lg-6`}>
+          <div className="row">
+            <div className={`col-6 col-sm-6 col-md-6`}>
+              <GatsbyImage image={imageThree} alt={imageThreeAlt} />
+            </div>
+            <div className={`col-6 col-sm-6 col-md-6`}>
+              <GatsbyImage image={imageFour} alt={imageFourAlt} />
+            </div>
           </div>
         </div>
       </div>
