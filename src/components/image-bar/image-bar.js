@@ -5,11 +5,14 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { chunk } from 'lodash'
 import { SRLWrapper } from "simple-react-lightbox";
 
-const ImageBar = ({ imagesDirectory, children }) => {
+import { faExpand } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+const ImageBar = ({ imagesDirectory, featureImage, children }) => {
   
   const data = useStaticQuery(graphql`
     query {
-      allFile(filter: {extension: {regex: "/(jpg)|(jpeg)|(png)/"}, dir: {regex: "images/"}}) {
+      allFile(filter: {extension: {regex: "/(jpg)|(jpeg)|(png)/"}, dir: {regex: "images/"}}, sort: {fields: name}) {
           edges {
             node {
               relativePath
@@ -36,17 +39,27 @@ const ImageBar = ({ imagesDirectory, children }) => {
 
   let imageChunks = chunk(images, 4);
 
+  let colClass = "col-6 col-sm-6 col-md-3";
+  let containerClass = "container";
+
+  if (featureImage === "true") {
+    colClass = "";
+    containerClass = styles.featuredContainer;
+  }
+
   return (
-    <div className="container">
+    <div className={`${containerClass}`}>
       <SRLWrapper>
-      {imageChunks.map((imagesChunk, i) => {
+      {imageChunks.map((imagesChunk, chunkIndex) => {
         return (
           <div className={`row ${styles.componentContainer}`}>
-            {imagesChunk.map((item, i) => {
+            {imagesChunk.map((item, imageIndex) => {
+              let altText = ((chunkIndex * 4) + imageIndex + 1).toString();
               return (
-                <div className={`col-6 col-sm-6 col-md-3`}>
+                <div className={`${styles.thumbnail} ${colClass}`}>
                   <a href={item.node.childImageSharp.fluid.src}>
-                    <GatsbyImage image={item.node.childImageSharp.gatsbyImageData} />
+                    <GatsbyImage image={item.node.childImageSharp.gatsbyImageData} alt={`Image ${(altText)}`}/>
+                    <span className={styles.viewContainer}><span className={styles.viewCopy}>View</span><FontAwesomeIcon icon={faExpand}/></span>
                   </a>
                 </div>)
             })}
