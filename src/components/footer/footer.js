@@ -23,10 +23,10 @@ const Footer = () => {
       <div className={`d-none d-md-block ${styles.thornsDesktopLeft}`}></div>
       <div className={styles.footerContent}>
         <ul>
-          <li><a href={data.site.siteMetadata.instagramUrl} target="_blank" name="Instagram"><FontAwesomeIcon icon={faInstagram}/></a></li>
-          <li><a href={data.site.siteMetadata.twitterUrl} target="_blank" name="Twitter"><FontAwesomeIcon icon={faTwitter}/></a></li>
-          <li><a href={data.site.siteMetadata.linkedInUrl} target="_blank" name="LinkedIn"><FontAwesomeIcon icon={faLinkedin}/></a></li>
-          <li><a href={data.site.siteMetadata.wordpressUrl} target="_blank" name="Blog"><FontAwesomeIcon icon={faWordpressSimple}/></a></li>
+          <li><a href={data.site.siteMetadata.instagramUrl} target="_blank" name="Instagram"><FontAwesomeIcon icon={faInstagram} name="Instagram"/></a></li>
+          <li><a href={data.site.siteMetadata.twitterUrl} target="_blank" name="Twitter"><FontAwesomeIcon icon={faTwitter} name="Twitter"/></a></li>
+          <li><a href={data.site.siteMetadata.linkedInUrl} target="_blank" name="LinkedIn"><FontAwesomeIcon icon={faLinkedin} name="LinkedIn"/></a></li>
+          <li><a href={data.site.siteMetadata.wordpressUrl} target="_blank" name="Blog"><FontAwesomeIcon icon={faWordpressSimple} name="Wordpress"/></a></li>
         </ul>
         <span>&copy; Emily-Rose Cripps {(new Date().getFullYear())}</span><br/>
         <span><a href="/privacy-policy">Privacy Policy</a></span>

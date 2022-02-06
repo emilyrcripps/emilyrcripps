@@ -61,7 +61,8 @@ const ImageBar = ({ imagesDirectory, featureImage, children }) => {
                     <GatsbyImage image={item.node.childImageSharp.gatsbyImageData} alt={`Image ${(altText)}`}/>
                     <span className={styles.viewContainer}><span className={styles.viewCopy}>View</span><FontAwesomeIcon icon={faExpand}/></span>
                   </a>
-                </div>)
+                </div>
+                )
             })}
         </div>)
       })}

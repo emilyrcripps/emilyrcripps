@@ -8,7 +8,6 @@ import * as styles from './layout.module.scss'
 import Header from './header/header'
 import Footer from './footer/footer'
 import { Helmet } from "react-helmet"
-import favicon from '../../src/images/icon.png'
 import SimpleReactLightbox from 'simple-react-lightbox'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -25,6 +24,7 @@ import NavigationTile from './navigation-tiles/navigation-tile.js'
 import ImageCanvas from './image-canvas/image-canvas.js'
 import PositionedImage from './positioned-image/positioned-image.js'
 import ContactForm from './contact-form/contact-form.js'
+import SiteBreadcrumb from './site-breadcrumb/site-breadcrumb.js'
 
 import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
 
@@ -45,10 +45,8 @@ const shortcodes = {
  }
 
 const Layout = ({ children, pageContext }) => {
-  const { pageTitle } = pageContext.frontmatter;
-
-  const location = useLocation();
-
+  const { pageTitle, metaDescription, crumbs } = pageContext.frontmatter;
+  
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -62,9 +60,12 @@ const Layout = ({ children, pageContext }) => {
   return (
     <SimpleReactLightbox>
       <div>
-        <Helmet>
+        <Helmet htmlAttributes={{
+          lang: 'en',
+        }}>
           <meta charSet="utf-8" />
           <title>{ pageTitle } | {data.site.siteMetadata.title}</title>
+          <meta name="description" content={metaDescription}/>
 
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -75,7 +76,9 @@ const Layout = ({ children, pageContext }) => {
         <main>
           <Header/>
           <div className={styles.mainContainer}>
+            <SiteBreadcrumb crumbs={crumbs}/>
             <MDXProvider components={ shortcodes } localImages={pageContext.frontmatter.embeddedImagesLocal}>{children}</MDXProvider>
+            <SiteBreadcrumb crumbs={crumbs}/>
           </div>
         </main>
         <Footer/>

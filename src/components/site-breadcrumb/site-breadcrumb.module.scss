@@ -1,0 +1,31 @@
+.site-breadcrumbs {
+    color: #999;
+
+    ul {
+        text-align: center;
+        list-style-type: none;
+        padding: 0px;
+
+        li {
+            display: inline;
+
+            a {
+                color: #999;
+                padding:10px;
+            }
+        }
+    }
+}
+
+.site-breadcrumbs:hover {
+    color: #555;
+    
+    a {
+        color: #555;
+    }
+
+    a:hover {
+        padding:10px;
+        color: #000;
+    }
+}

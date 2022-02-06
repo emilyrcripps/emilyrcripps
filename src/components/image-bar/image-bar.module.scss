@@ -13,11 +13,16 @@
     span.view-container {
         position: absolute;
         right: 25px;
-        bottom: 10px;
+        bottom: 13px;
         padding: 10px 20px 10px 20px;
         color: #FFF;
         text-decoration: none;
         background-color:#000;
+
+        svg {
+            margin-top:4px;
+            float:right;
+        }
     }
 
     span.view-copy {
@@ -66,11 +71,16 @@
         span.view-container {
             position: absolute;
             right: 20px;
-            bottom: 10px;
+            bottom: 15px;
             padding: 10px 20px 10px 20px;
             color: #FFF;
             text-decoration: none;
             background-color:#000;
+
+            svg {
+                margin-top:4px;
+                float:right;
+            }
         }
 
         span.view-copy {

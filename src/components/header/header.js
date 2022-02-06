@@ -116,7 +116,6 @@ const LogoCopy = styled.span`
 `
 
 const Header = () => {
-
   const [nav, showNav] = useState(false);
 
   const [isLogoAnimated, animateLogo] = useState(false);
@@ -139,6 +138,23 @@ const Header = () => {
     }, 1000)
   }*/
 
+  if (!nav) {
+    document.querySelector('body').classList.remove(styles.bodyNoScroll);
+  }
+
+  let toggleNav = function(show) {
+    window.scrollTo(0, 0);
+
+    if (show) {
+      document.querySelector('body').classList.add(styles.bodyNoScroll);
+    } else {
+      document.querySelector('body').classList.remove(styles.bodyNoScroll);
+    }
+    
+
+    showNav(show)
+  }
+
   return (
     <div className={styles.erdHeader}>
       <div className="container">
@@ -154,7 +170,7 @@ const Header = () => {
           </div>
 
         </div>
-        <MenuIcon nav={nav} onClick={() => showNav(!nav)}>
+        <MenuIcon nav={nav} onClick={() => toggleNav(!nav)} name="Menu">
             <div />
             <div />
             <div />

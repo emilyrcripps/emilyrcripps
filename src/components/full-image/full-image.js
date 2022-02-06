@@ -3,7 +3,7 @@ import React, { useMemo } from 'react'
 import * as styles from './full-image.module.scss'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-const FullImage = ({ imagePath, imageAlt }) => {
+const FullImage = ({ imagePath, imageAlt, width }) => {
   
   const data = useStaticQuery(graphql`
     query {
@@ -33,7 +33,12 @@ const FullImage = ({ imagePath, imageAlt }) => {
     <div className={`container ${styles.componentContainer}`}>
       <div className="row">
         <div className="col-12">
-          <GatsbyImage image={image} alt={imageAlt} />
+          { width != undefined &&
+            <GatsbyImage image={image} alt={imageAlt} width={width} />
+          }
+          { width == undefined &&
+            <GatsbyImage image={image} alt={imageAlt} />
+          }
         </div>
       </div>
     </div>
