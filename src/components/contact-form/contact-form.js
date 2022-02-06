@@ -3,7 +3,7 @@ import * as styles from './contact-form.module.scss'
 
 const ContactForm = () => {
   return (
-    <form name="Contact Form" method="POST" data-netlify="true" className={styles.contactForm}>
+    <form name="Contact Form" method="POST" data-netlify="true" action="/contact/thank-you" className={styles.contactForm}>
       <input type="hidden" name="form-name" value="Contact Form" />
       <div>
         <label for="txtName">Name:</label>
