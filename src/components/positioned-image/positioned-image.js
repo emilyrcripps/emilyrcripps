@@ -15,7 +15,7 @@ const PositionedImage = ({ imagePath, imageAlt, height, width, top, right, trans
                 gatsbyImageData(
                   width: 500
                   placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
+                  formats: [WEBP]
                 )
               }
             }

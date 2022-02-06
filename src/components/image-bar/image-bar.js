@@ -21,7 +21,7 @@ const ImageBar = ({ imagesDirectory, featureImage, children }) => {
                   width: 300
                   height: 260
                   placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
+                  formats: [WEBP]
                 )
                 fluid {
                   src

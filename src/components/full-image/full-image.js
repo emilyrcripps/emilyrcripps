@@ -14,7 +14,7 @@ const FullImage = ({ imagePath, imageAlt, width }) => {
               childImageSharp {
                 gatsbyImageData(
                   placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
+                  formats: [WEBP]
                 )
               }
             }
