@@ -118,8 +118,8 @@ const LogoCopy = styled.span`
 const Header = () => {
   const [nav, showNav] = useState(false);
 
-  const [isLogoAnimated, animateLogo] = useState(false);
-  const [isLogoCopyAnimated, animateLogoCopy] = useState(false);
+  //const [isLogoAnimated, animateLogo] = useState(false);
+  //const [isLogoCopyAnimated, animateLogoCopy] = useState(false);
 
   //const [isLogoAnimated, animateLogo] = useState(window.sessionStorage.getItem( 'isLogoAnimated' ) || false);
   //const [isLogoCopyAnimated, animateLogoCopy] = useState(window.sessionStorage.getItem( 'isLogoCopyAnimated' ) || false);
@@ -139,16 +139,22 @@ const Header = () => {
   }*/
 
   if (!nav) {
-    document.querySelector('body').classList.remove(styles.bodyNoScroll);
+    if (typeof document !== `undefined`) {
+      document.querySelector('body').classList.remove(styles.bodyNoScroll);
+    }
   }
 
   let toggleNav = function(show) {
     window.scrollTo(0, 0);
 
     if (show) {
-      document.querySelector('body').classList.add(styles.bodyNoScroll);
+      if (typeof document !== `undefined`) {
+        document.querySelector('body').classList.add(styles.bodyNoScroll);
+      }
     } else {
-      document.querySelector('body').classList.remove(styles.bodyNoScroll);
+      if (typeof document !== `undefined`) {
+        document.querySelector('body').classList.remove(styles.bodyNoScroll);
+      }
     }
     
 

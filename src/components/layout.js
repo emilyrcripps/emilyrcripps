@@ -26,8 +26,6 @@ import PositionedImage from './positioned-image/positioned-image.js'
 import ContactForm from './contact-form/contact-form.js'
 import SiteBreadcrumb from './site-breadcrumb/site-breadcrumb.js'
 
-import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
-
 library.add(fab);
 
 const shortcodes = { 
@@ -66,6 +64,7 @@ const Layout = ({ children, pageContext }) => {
           <meta charSet="utf-8" />
           <title>{ pageTitle } | {data.site.siteMetadata.title}</title>
           <meta name="description" content={metaDescription}/>
+          <meta name="google-site-verification" content="hwsgmF197T_61w_j9Xw8Hd0TdRPdAXCR-MoLOP1FsbI" />
 
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
