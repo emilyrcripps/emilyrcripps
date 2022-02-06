@@ -16,7 +16,7 @@ const NavigationTile = ({ title, linkPage, imagePath, imageAlt, target }) => {
                 gatsbyImageData(
                   width: 500
                   placeholder: BLURRED
-                  formats: [WEBP]
+                  formats: [AUTO, WEBP]
                 )
               }
             }

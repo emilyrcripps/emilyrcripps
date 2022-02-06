@@ -15,7 +15,7 @@ const TextMediaSplit = ({ imagePath, imageAlt, reverseLayout, children }) => {
                 gatsbyImageData(
                   width: 700
                   placeholder: BLURRED
-                  formats: [WEBP]
+                  formats: [AUTO, WEBP]
                 )
               }
             }
