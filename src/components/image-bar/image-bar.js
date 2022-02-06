@@ -47,6 +47,30 @@ const ImageBar = ({ imagesDirectory, featureImage, children }) => {
     containerClass = styles.featuredContainer;
   }
 
+  // Search from element up to parent
+  function upTo(el, tagName) {
+    tagName = tagName.toLowerCase();
+
+    while (el && el.parentNode) {
+      el = el.parentNode;
+      if (el.tagName && el.tagName.toLowerCase() == tagName) {
+        return el;
+      }
+    }
+
+    return null;
+  }
+
+  function viewClick(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    var clickEl = upTo(e.target, 'a').querySelector('picture').querySelector('img');
+    
+    if (clickEl) {
+      clickEl.click();
+    }
+  }
+
   return (
     <div className={`${containerClass}`}>
       <SRLWrapper>
@@ -59,7 +83,7 @@ const ImageBar = ({ imagesDirectory, featureImage, children }) => {
                 <div className={`${styles.thumbnail} ${colClass}`}>
                   <a href={item.node.childImageSharp.fluid.src}>
                     <GatsbyImage image={item.node.childImageSharp.gatsbyImageData} alt={`Image ${(altText)}`}/>
-                    <span className={styles.viewContainer}><span className={styles.viewCopy}>View</span><FontAwesomeIcon icon={faExpand}/></span>
+                    <span onClick={viewClick} className={styles.viewContainer}><span onClick={viewClick} className={styles.viewCopy}>View</span><FontAwesomeIcon icon={faExpand}/></span>
                   </a>
                 </div>
                 )
