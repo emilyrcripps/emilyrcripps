@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql, StaticQuery } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import React, { useMemo } from 'react'
 import * as styles from './text-media-split.module.scss'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"

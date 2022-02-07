@@ -1,5 +1,4 @@
-import { useStaticQuery, graphql, StaticQuery } from "gatsby"
-import React, { useMemo } from 'react'
+import React from 'react'
 import * as styles from './text-column.module.scss'
 
 const TextColumn = ({ cols, children, divider, headerAlign, noPadding }) => {

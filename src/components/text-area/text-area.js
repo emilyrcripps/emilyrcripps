@@ -1,5 +1,4 @@
-import { useStaticQuery, graphql, StaticQuery } from "gatsby"
-import React, { useMemo } from 'react'
+import React from 'react'
 import * as styles from './text-area.module.scss'
 
 const TextArea = ({ children }) => {

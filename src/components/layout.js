@@ -1,7 +1,5 @@
 import * as React from 'react'
 
-import { useLocation } from '@reach/router';
-
 import { MDXProvider } from "@mdx-js/react"
 import { useStaticQuery, graphql } from 'gatsby'
 import * as styles from './layout.module.scss'
@@ -70,13 +68,17 @@ const Layout = ({ children, pageContext }) => {
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
           <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Vidaloka&display=swap" rel="stylesheet" />
 
+          <meta property="og:title" content={`${pageTitle} | ${data.site.siteMetadata.title}`} />
+          <meta property="og:description" content={metaDescription} />
+          <meta property="og:image" content="TODO" />
+
           <meta name="icon" href="images/icon.png" />
         </Helmet>
         <main>
           <Header/>
           <div className={styles.mainContainer}>
             <SiteBreadcrumb crumbs={crumbs}/>
-            <MDXProvider components={ shortcodes } localImages={pageContext.frontmatter.embeddedImagesLocal}>{children}</MDXProvider>
+            <MDXProvider components={ shortcodes }>{children}</MDXProvider>
             <SiteBreadcrumb crumbs={crumbs}/>
           </div>
         </main>

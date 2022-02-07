@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql, StaticQuery } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import React, { useMemo } from 'react'
 import * as styles from './full-image.module.scss'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
@@ -33,10 +33,10 @@ const FullImage = ({ imagePath, imageAlt, width }) => {
     <div className={`container ${styles.componentContainer}`}>
       <div className="row">
         <div className="col-12">
-          { width != undefined &&
+          { width !== undefined &&
             <GatsbyImage image={image} alt={imageAlt} width={width} />
           }
-          { width == undefined &&
+          { width === undefined &&
             <GatsbyImage image={image} alt={imageAlt} />
           }
         </div>

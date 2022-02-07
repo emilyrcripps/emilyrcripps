@@ -1,14 +1,14 @@
-import { useStaticQuery, graphql, StaticQuery } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import React, { useMemo } from 'react'
 import * as styles from './image-bar.module.scss'
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { chunk } from 'lodash'
 import { SRLWrapper } from "simple-react-lightbox";
 
 import { faExpand } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const ImageBar = ({ imagesDirectory, featureImage, children }) => {
+const ImageBar = ({ imagesDirectory, featureImage }) => {
   
   const data = useStaticQuery(graphql`
     query {
@@ -53,7 +53,7 @@ const ImageBar = ({ imagesDirectory, featureImage, children }) => {
 
     while (el && el.parentNode) {
       el = el.parentNode;
-      if (el.tagName && el.tagName.toLowerCase() == tagName) {
+      if (el.tagName && el.tagName.toLowerCase() === tagName) {
         return el;
       }
     }

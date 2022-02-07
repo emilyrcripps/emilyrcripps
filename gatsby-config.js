@@ -1,9 +1,9 @@
 module.exports = {
     siteMetadata: {
-        siteUrl: "https://www.emilyrcripps.com",
+        siteUrl: "https://emilyrcripps.com",
         title: "Emily-Rose Cripps Design",
         instagramUrl: "https://www.instagram.com/emilyrcrippsdesign/",
-        twitterUrl: "https://twitter.com/crippsie_design",
+        twitterUrl: "https://twitter.com/crippsie_design/",
         linkedInUrl: "https://www.linkedin.com/in/emily-rose-cripps-0840b8205/",
         wordpressUrl: "https://emilyrosegraphicsblog.wordpress.com/"
     },

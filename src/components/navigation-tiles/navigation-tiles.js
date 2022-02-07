@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import * as styles from './navigation-tiles.module.scss'
 
 const NavigationTiles = ({ children }) => {
