@@ -24,6 +24,9 @@ import PositionedImage from './positioned-image/positioned-image.js'
 import ContactForm from './contact-form/contact-form.js'
 import SiteBreadcrumb from './site-breadcrumb/site-breadcrumb.js'
 
+import Icon from '../images/icon.png'
+import SocialBanner from '../images/social-banner.jpg'
+
 library.add(fab);
 
 const shortcodes = { 
@@ -70,9 +73,9 @@ const Layout = ({ children, pageContext }) => {
 
           <meta property="og:title" content={`${pageTitle} | ${data.site.siteMetadata.title}`} />
           <meta property="og:description" content={metaDescription} />
-          <meta property="og:image" content="TODO" />
+          <meta property="og:image" content={ SocialBanner } />
 
-          <meta name="icon" href="images/icon.png" />
+          <meta name="icon" content={ Icon } />
         </Helmet>
         <main>
           <Header/>
