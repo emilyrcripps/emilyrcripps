@@ -83,7 +83,7 @@ const ImageBar = ({ imagesDirectory, featureImage }) => {
                 <div className={`${styles.thumbnail} ${colClass}`}>
                   <a href={item.node.childImageSharp.fluid.src}>
                     <GatsbyImage image={item.node.childImageSharp.gatsbyImageData} alt={`Image ${(altText)}`}/>
-                    <span onClick={viewClick} className={styles.viewContainer}><span onClick={viewClick} className={styles.viewCopy}>View</span><FontAwesomeIcon icon={faExpand}/></span>
+                    <span onClick={viewClick} className={styles.viewContainer}><FontAwesomeIcon icon={faExpand}/></span>
                   </a>
                 </div>
                 )

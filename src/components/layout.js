@@ -3,7 +3,7 @@ import * as React from 'react'
 import { MDXProvider } from "@mdx-js/react"
 import { useStaticQuery, graphql } from 'gatsby'
 import * as styles from './layout.module.scss'
-import Header from './header/header'
+import HeaderInline from './header-inline/header-inline'
 import Footer from './footer/footer'
 import { Helmet } from "react-helmet"
 import SimpleReactLightbox from 'simple-react-lightbox'
@@ -78,9 +78,8 @@ const Layout = ({ children, pageContext }) => {
           <meta name="icon" content={ Icon } />
         </Helmet>
         <main>
-          <Header/>
+          <HeaderInline/>
           <div className={styles.mainContainer}>
-            <SiteBreadcrumb crumbs={crumbs}/>
             <MDXProvider components={ shortcodes }>{children}</MDXProvider>
             <SiteBreadcrumb crumbs={crumbs}/>
           </div>
