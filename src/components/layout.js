@@ -19,10 +19,13 @@ import TextColumn from './text-column/text-column.js'
 import FullImage from './full-image/full-image.js'
 import NavigationTiles from './navigation-tiles/navigation-tiles.js'
 import NavigationTile from './navigation-tiles/navigation-tile.js'
+import NavigationTilesCarousel from './navigation-tiles-carousel/navigation-tiles-carousel.js'
+import NavigationTileCarousel from './navigation-tiles-carousel/navigation-tile-carousel.js'
 import ImageCanvas from './image-canvas/image-canvas.js'
 import PositionedImage from './positioned-image/positioned-image.js'
 import ContactForm from './contact-form/contact-form.js'
 import SiteBreadcrumb from './site-breadcrumb/site-breadcrumb.js'
+import FeatureBanner from './feature-banner/feature-banner.js'
 
 import Icon from '../images/icon.png'
 import SocialBanner from '../images/social-banner.jpg'
@@ -36,11 +39,14 @@ const shortcodes = {
   TextColumn, 
   FullImage, 
   NavigationTiles, 
-  NavigationTile, 
+  NavigationTilesCarousel, 
+  NavigationTile,
+  NavigationTileCarousel, 
   ImageCanvas, 
   PositionedImage, 
   ContactForm,
-  FontAwesomeIcon
+  FontAwesomeIcon,
+  FeatureBanner
  }
 
 const Layout = ({ children, pageContext }) => {

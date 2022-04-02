@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import logo from './inline-logo.png'
 import * as styles from './header-inline.module.scss'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const MenuIcon = styled.button`
@@ -23,7 +23,7 @@ const MenuIcon = styled.button`
   div {
     width: 1.5rem;
     height: 0.22rem;
-    background-color: #FFF;
+    background-color: ${({nav}) => nav ? "#FFF" : "#5fc0c5"};
     border-radius: 5px;
     transform-origin: 1px;
 
@@ -41,6 +41,10 @@ const MenuIcon = styled.button`
       transition: transform 300ms;
       transform: ${({nav}) => nav ? "rotate(-45deg)" : "rotate(0deg)"}
     }
+  }
+
+  @media (min-width:1200px) {
+      display:none;
   }
 `
 
@@ -91,30 +95,29 @@ const MenuLinks = styled.nav`
 `
 
 const LogoImg = styled.img`
-  width: 336px;
-  height: 240px;
+  width: 168px;
+  height: 120px;
   transition: opacity 700ms;
   opacity: ${({isLogoAnimated}) => isLogoAnimated ? "1" : "0"}
 `
 
 const LogoCopy = styled.span`
-    @media (max-width: 575px) {
-      position: relative;
-      top:-12%;
-    }
+  position: absolute;
+  bottom: 10px;
+  left: 155px;
 
-    @media (min-width: 576px) {
-      position: absolute;
-      bottom: 10px;
-      left: 300px;
-    }
+  @media (max-width:465px) {
+      bottom:25px;
+  }
 
   transition: opacity 700ms;
   opacity: ${({isLogoCopyAnimated}) => isLogoCopyAnimated ? "1" : "0"};
 
   span.logo-copy-name {
+    font-size:20px;
     font-weight: bold;
     font-family: 'Vidaloka', serif;
+    color: #706F6F;
 
     span {
       color: #5fc0c5;
@@ -125,11 +128,31 @@ const LogoCopy = styled.span`
     font-size:20px;
     display:block;
     color: #706F6F;
+
+    @media (max-width:465px) {
+      font-size:15px;
+    }
+    @media (max-width:400px) {
+      font-size:12px;
+    }
   }
 `
 
 const HeaderInline = () => {
   const [nav, showNav] = useState(false);
+
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          instagramUrl
+          twitterUrl
+          linkedInUrl
+          wordpressUrl
+        }
+      }
+    }
+  `)
 
   //const [isLogoAnimated, animateLogo] = useState(false);
   //const [isLogoCopyAnimated, animateLogoCopy] = useState(false);
@@ -174,12 +197,23 @@ const HeaderInline = () => {
     showNav(show)
   }
 
-  function isActive( {isCurrent} ) {
-    return isCurrent ? {className: styles.navActive} : null
+  function isActive( {isCurrent, isPartiallyCurrent, href} ) {
+    if (href === '/' && (isCurrent || isPartiallyCurrent)) {
+      if (document.location.pathname !== '/') {
+        return null;
+      }
+    }
+
+    return isCurrent || isPartiallyCurrent ? {className: styles.navActive} : null
   }
 
   return (
     <div className={styles.erdHeader}>
+      <MenuIcon nav={nav} onClick={() => toggleNav(!nav)} name="Menu">
+        <div />
+        <div />
+        <div />
+      </MenuIcon>
       <div className="container">
         <div className={styles.erdLogoWrapper}>
           <div className={styles.erdLogoContainer}>
@@ -190,16 +224,17 @@ const HeaderInline = () => {
                 />
               </Link>
               <LogoCopy isLogoCopyAnimated={true}>
-                <span className="logo-copy-inner logo-copy-name">Emily-Rose Cripps<span>.</span></span>
+                <span className="logo-copy-name">Emily-Rose Cripps<span>.</span></span>
                 <span className="logo-copy-inner">Graphic Design and Illustration</span>
               </LogoCopy>
           </div>
           <div className={styles.erdInlineNavContainer}>
               <ul>
                 <li><Link getProps={isActive} hex="#5fc0c5" duration={0.6} to="/">Home</Link></li>
-                <li><Link getProps={isActive} hex="#5fc0c5" duration={0.6} to="/about">About</Link></li>
-                <li><Link getProps={isActive} hex="#5fc0c5" duration={0.6} to="/portfolio">Portfolio</Link></li>
-                <li><Link getProps={isActive} hex="#5fc0c5" duration={0.6} to="/contact">Contact</Link></li>
+                <li><Link getProps={isActive} hex="#5fc0c5" duration={0.6} to="/about/">About</Link></li>
+                <li><Link getProps={isActive} hex="#5fc0c5" duration={0.6} to="/portfolio/">Portfolio</Link></li>
+                <li><Link getProps={isActive} hex="#5fc0c5" duration={0.6} target="_blank" to={data.site.siteMetadata.wordpressUrl}>Blog</Link></li>
+                <li><Link getProps={isActive} hex="#5fc0c5" duration={0.6} to="/contact/">Contact</Link></li>
               </ul>
           </div>
 
