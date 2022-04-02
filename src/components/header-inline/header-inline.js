@@ -198,7 +198,7 @@ const HeaderInline = () => {
   }
 
   function isActive( {isCurrent, isPartiallyCurrent, href} ) {
-    if (href === '/' && (isCurrent || isPartiallyCurrent)) {
+    if (typeof document !== `undefined` && href === '/' && (isCurrent || isPartiallyCurrent)) {
       if (document.location.pathname !== '/') {
         return null;
       }
