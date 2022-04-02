@@ -45,11 +45,11 @@ const FeatureBanner = ({ title, linkPage, imagePath, imageAlt, target }) => {
         <div className="row">
           <div className="col-12 col-md-12">
             <div className={styles.featureBannerContainer}>
-            <Img
+              <Img
                 fixed={sources}
-                alt="123"
+                alt="Giraffe About Town"
               />
-              <AniLink paintDrip to='/' hex="#5fc0c5" duration={0.6} target={target}>
+              <AniLink paintDrip to='/portfolio/competitions/giraffe-about-town' hex="#5fc0c5" duration={0.6} target={target}>
                       
                       <span>{title}</span>
                       <div className={styles.featureBannerHeader}>Giraffe About Town</div>
