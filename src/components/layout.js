@@ -49,7 +49,7 @@ const shortcodes = {
   FeatureBanner
  }
 
-const Layout = ({ children, pageContext }) => {
+const Layout = ({ children, pageContext, location }) => {
   const { pageTitle, metaDescription, crumbs } = pageContext.frontmatter;
   
   const data = useStaticQuery(graphql`
@@ -84,7 +84,7 @@ const Layout = ({ children, pageContext }) => {
           <meta name="icon" content={ Icon } />
         </Helmet>
         <main>
-          <HeaderInline/>
+          <HeaderInline location={location}/>
           <div className={styles.mainContainer}>
             <MDXProvider components={ shortcodes }>{children}</MDXProvider>
             <SiteBreadcrumb crumbs={crumbs}/>

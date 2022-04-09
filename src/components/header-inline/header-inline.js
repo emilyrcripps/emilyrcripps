@@ -4,6 +4,7 @@ import * as styles from './header-inline.module.scss'
 import styled from 'styled-components'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import AniLink from "gatsby-plugin-transition-link/AniLink"
+import { Location } from '@reach/router';
 
 const MenuIcon = styled.button`
   display: flex;
@@ -138,7 +139,7 @@ const LogoCopy = styled.span`
   }
 `
 
-const HeaderInline = () => {
+const HeaderInline = ({ location }) => {
   const [nav, showNav] = useState(false);
 
   const data = useStaticQuery(graphql`
@@ -153,26 +154,6 @@ const HeaderInline = () => {
       }
     }
   `)
-
-  //const [isLogoAnimated, animateLogo] = useState(false);
-  //const [isLogoCopyAnimated, animateLogoCopy] = useState(false);
-
-  //const [isLogoAnimated, animateLogo] = useState(window.sessionStorage.getItem( 'isLogoAnimated' ) || false);
-  //const [isLogoCopyAnimated, animateLogoCopy] = useState(window.sessionStorage.getItem( 'isLogoCopyAnimated' ) || false);
-
-  /*if (!isLogoAnimated || isLogoAnimated === false) {
-    setTimeout(function() {
-      animateLogo(true);
-      window.sessionStorage.setItem('isLogoAnimated', true );
-    }, 600)
-  }*/
-
-  /*if (!isLogoCopyAnimated || isLogoCopyAnimated === false) {
-    setTimeout(function() {
-      animateLogoCopy(true);
-      window.sessionStorage.setItem('isLogoCopyAnimated', true );
-    }, 1000)
-  }*/
 
   if (!nav) {
     if (typeof document !== `undefined`) {
@@ -193,17 +174,16 @@ const HeaderInline = () => {
       }
     }
     
-
     showNav(show)
   }
 
   function isActive( {isCurrent, isPartiallyCurrent, href} ) {
-    if (typeof document !== `undefined` && href === '/' && (isCurrent || isPartiallyCurrent)) {
-      if (document.location.pathname !== '/') {
-        return null;
+    if (href === '/' && (isCurrent || isPartiallyCurrent)) {
+      if (location.pathname !== '/') {
+        return {className: ''};
       }
     }
-
+    
     return isCurrent || isPartiallyCurrent ? {className: styles.navActive} : null
   }
 
@@ -230,11 +210,11 @@ const HeaderInline = () => {
           </div>
           <div className={styles.erdInlineNavContainer}>
               <ul>
-                <li><Link getProps={isActive} hex="#5fc0c5" duration={0.6} to="/">Home</Link></li>
-                <li><Link getProps={isActive} hex="#5fc0c5" duration={0.6} to="/about/">About</Link></li>
-                <li><Link getProps={isActive} hex="#5fc0c5" duration={0.6} to="/portfolio/">Portfolio</Link></li>
-                <li><Link getProps={isActive} hex="#5fc0c5" duration={0.6} target="_blank" to={data.site.siteMetadata.wordpressUrl}>Blog</Link></li>
-                <li><Link getProps={isActive} hex="#5fc0c5" duration={0.6} to="/contact/">Contact</Link></li>
+                <li><Link getProps={isActive} to="/">Home</Link></li>
+                <li><Link getProps={isActive} to="/portfolio/">Portfolio</Link></li>
+                <li><Link getProps={isActive} to="/about/">About</Link></li>
+                <li><Link getProps={isActive} target="_blank" to={data.site.siteMetadata.wordpressUrl}>Blog</Link></li>
+                <li><Link getProps={isActive} to="/contact/">Contact</Link></li>
               </ul>
           </div>
 
@@ -242,8 +222,8 @@ const HeaderInline = () => {
         <MenuLinks nav={nav}>
           <ul>
             <li><AniLink paintDrip hex="#5fc0c5" duration={0.6} to="/">Home</AniLink></li>
-            <li><AniLink paintDrip hex="#5fc0c5" duration={0.6} to="/about">About</AniLink></li>
             <li><AniLink paintDrip hex="#5fc0c5" duration={0.6} to="/portfolio">Portfolio</AniLink></li>
+            <li><AniLink paintDrip hex="#5fc0c5" duration={0.6} to="/about">About</AniLink></li>
             <li><AniLink paintDrip hex="#5fc0c5" duration={0.6} to="/contact">Contact</AniLink></li>
           </ul>
         </MenuLinks>
