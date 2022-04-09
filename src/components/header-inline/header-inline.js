@@ -211,8 +211,8 @@ const HeaderInline = ({ location }) => {
           <div className={styles.erdInlineNavContainer}>
               <ul>
                 <li><Link getProps={isActive} to="/">Home</Link></li>
-                <li><Link getProps={isActive} to="/about/">About</Link></li>
                 <li><Link getProps={isActive} to="/portfolio/">Portfolio</Link></li>
+                <li><Link getProps={isActive} to="/about/">About</Link></li>
                 <li><Link getProps={isActive} target="_blank" to={data.site.siteMetadata.wordpressUrl}>Blog</Link></li>
                 <li><Link getProps={isActive} to="/contact/">Contact</Link></li>
               </ul>
@@ -222,8 +222,8 @@ const HeaderInline = ({ location }) => {
         <MenuLinks nav={nav}>
           <ul>
             <li><AniLink paintDrip hex="#5fc0c5" duration={0.6} to="/">Home</AniLink></li>
-            <li><AniLink paintDrip hex="#5fc0c5" duration={0.6} to="/about">About</AniLink></li>
             <li><AniLink paintDrip hex="#5fc0c5" duration={0.6} to="/portfolio">Portfolio</AniLink></li>
+            <li><AniLink paintDrip hex="#5fc0c5" duration={0.6} to="/about">About</AniLink></li>
             <li><AniLink paintDrip hex="#5fc0c5" duration={0.6} to="/contact">Contact</AniLink></li>
           </ul>
         </MenuLinks>
