@@ -86,8 +86,6 @@ const MenuLinks = styled.nav`
       text-decoration-thickness: 5px;
       text-decoration-color: #5fc0c5;
       background-color:#000;
-
-      
     }
   }
 `

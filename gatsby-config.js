@@ -5,7 +5,8 @@ module.exports = {
         instagramUrl: "https://www.instagram.com/emilyrcrippsdesign/",
         twitterUrl: "https://twitter.com/crippsie_design/",
         linkedInUrl: "https://www.linkedin.com/in/emily-rose-cripps-0840b8205/",
-        wordpressUrl: "https://emilyrosegraphicsblog.wordpress.com/"
+        wordpressUrl: "https://emilyrosegraphicsblog.wordpress.com/",
+        etsyUrl: "https://www.etsy.com/uk/shop/EmilyRCrippsDesign"
     },
     plugins: [
         "gatsby-plugin-sass",

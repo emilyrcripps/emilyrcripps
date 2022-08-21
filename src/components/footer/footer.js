@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import * as styles from './footer.module.scss'
-import { faTwitter, faLinkedin, faInstagram, faWordpressSimple } from "@fortawesome/free-brands-svg-icons";
+import { faTwitter, faLinkedin, faInstagram, faWordpressSimple, faEtsy } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = () => {
@@ -12,7 +12,8 @@ const Footer = () => {
           instagramUrl
           twitterUrl
           linkedInUrl
-          wordpressUrl
+          wordpressUrl,
+          etsyUrl
         }
       }
     }
@@ -27,6 +28,7 @@ const Footer = () => {
           <li><a href={data.site.siteMetadata.twitterUrl} target="_blank" rel="noreferrer" name="Twitter"><FontAwesomeIcon icon={faTwitter} name="Twitter"/></a></li>
           <li><a href={data.site.siteMetadata.linkedInUrl} target="_blank" rel="noreferrer" name="LinkedIn"><FontAwesomeIcon icon={faLinkedin} name="LinkedIn"/></a></li>
           <li><a href={data.site.siteMetadata.wordpressUrl} target="_blank" rel="noreferrer" name="Blog"><FontAwesomeIcon icon={faWordpressSimple} name="Wordpress"/></a></li>
+          <li><a href={data.site.siteMetadata.etsyUrl} target="_blank" rel="noreferrer" name="Etsy"><FontAwesomeIcon icon={faEtsy} name="Etsy"/></a></li>
         </ul>
         <span>&copy; Emily-Rose Cripps {(new Date().getFullYear())}</span><br/>
         <span><a href="/privacy-policy">Privacy Policy</a></span>
