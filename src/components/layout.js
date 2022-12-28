@@ -6,7 +6,6 @@ import * as styles from './layout.module.scss'
 import HeaderInline from './header-inline/header-inline'
 import Footer from './footer/footer'
 import { Helmet } from "react-helmet"
-import SimpleReactLightbox from 'simple-react-lightbox'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from "@fortawesome/free-brands-svg-icons";
@@ -63,7 +62,7 @@ const Layout = ({ children, pageContext, location }) => {
   `)
 
   return (
-    <SimpleReactLightbox>
+    
       <div>
         <Helmet htmlAttributes={{
           lang: 'en',
@@ -92,7 +91,7 @@ const Layout = ({ children, pageContext, location }) => {
         </main>
         <Footer/>
       </div>
-    </SimpleReactLightbox>
+      
   )
 }
 

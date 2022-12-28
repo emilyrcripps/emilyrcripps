@@ -3,7 +3,6 @@ import React, { useMemo } from 'react'
 import * as styles from './image-bar.module.scss'
 import { GatsbyImage } from "gatsby-plugin-image"
 import { chunk } from 'lodash'
-import { SRLWrapper } from "simple-react-lightbox";
 
 import { faExpand } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -73,7 +72,7 @@ const ImageBar = ({ imagesDirectory, featureImage }) => {
 
   return (
     <div className={`${containerClass}`}>
-      <SRLWrapper>
+
       {imageChunks.map((imagesChunk, chunkIndex) => {
         return (
           <div className={`row ${styles.componentContainer}`}>
@@ -90,7 +89,7 @@ const ImageBar = ({ imagesDirectory, featureImage }) => {
             })}
         </div>)
       })}
-      </SRLWrapper>
+
     </div>
   )
 }
