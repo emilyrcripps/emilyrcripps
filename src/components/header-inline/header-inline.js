@@ -216,8 +216,6 @@ const HeaderInline = ({ location }) => {
               <ul>
                 <li><Link getProps={isActive} to="/">Home</Link></li>
                 <li><Link getProps={isActive} to="/portfolio/">Portfolio</Link></li>
-                <li><Link getProps={isActive} to="/about/">About</Link></li>
-                <li><Link getProps={isActive} target="_blank" to={data.site.siteMetadata.wordpressUrl}>Blog</Link></li>
                 <li><Link getProps={isActive} to="/contact/">Contact</Link></li>
                 <li><Link getProps={isActive} target="_blank" to={data.site.siteMetadata.etsyUrl}><FontAwesomeIcon icon={faShoppingBasket} name="Shop"/> Shop</Link></li>
               </ul>
@@ -228,7 +226,6 @@ const HeaderInline = ({ location }) => {
           <ul>
             <li><AniLink paintDrip hex="#5fc0c5" duration={0.6} to="/">Home</AniLink></li>
             <li><AniLink paintDrip hex="#5fc0c5" duration={0.6} to="/portfolio">Portfolio</AniLink></li>
-            <li><AniLink paintDrip hex="#5fc0c5" duration={0.6} to="/about">About</AniLink></li>
             <li><AniLink paintDrip hex="#5fc0c5" duration={0.6} to="/contact">Contact</AniLink></li>
             <li><AniLink paintDrip hex="#5fc0c5" duration={0.6} target="_blank" to={data.site.siteMetadata.etsyUrl}>Shop</AniLink></li>
           </ul>
