@@ -67,15 +67,3 @@
         }
     }
 }
-
-@media (max-width: 767px) {
-    .footer-content {
-        width:100%;
-
-        background-image: 
-            linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5) ),
-            url(./images/left-thorns-set.jpg);
-
-        background-position:top center;
-    }
-}
