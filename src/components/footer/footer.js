@@ -21,7 +21,6 @@ const Footer = () => {
 
   return (
     <footer className={styles.erdFooter}>
-      <div className={`d-none d-md-block ${styles.thornsDesktopLeft}`}></div>
       <div className={styles.footerContent}>
         <ul>
           <li><a href={data.site.siteMetadata.instagramUrl} target="_blank" rel="noreferrer" name="Instagram"><FontAwesomeIcon icon={faInstagram} name="Instagram"/></a></li>
@@ -33,7 +32,6 @@ const Footer = () => {
         <span>&copy; Emily-Rose Cripps {(new Date().getFullYear())}</span><br/>
         <span><a href="/privacy-policy">Privacy Policy</a></span>
       </div>
-      <div className={`d-none d-md-block ${styles.thornsDesktopRight}`}></div>
     </footer>
   )
 }
