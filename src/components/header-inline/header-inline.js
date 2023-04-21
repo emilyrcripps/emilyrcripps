@@ -99,10 +99,17 @@ const MenuLinks = styled.nav`
 `
 
 const LogoImg = styled.img`
-  width: 168px;
-  height: 120px;
+  width: 150px;
   transition: opacity 700ms;
   opacity: ${({isLogoAnimated}) => isLogoAnimated ? "1" : "0"}
+
+  @media (max-width:400px) {
+    width: 120px;
+  }
+
+  @media (max-width:465px) {
+    width: 120px;
+  }
 `
 
 const LogoCopy = styled.span`
@@ -111,7 +118,8 @@ const LogoCopy = styled.span`
   left: 155px;
 
   @media (max-width:465px) {
-      bottom:25px;
+      bottom:35px;
+      left: 125px;
   }
 
   transition: opacity 700ms;
@@ -209,7 +217,7 @@ const HeaderInline = ({ location }) => {
               </Link>
               <LogoCopy isLogoCopyAnimated={true}>
                 <span className="logo-copy-name">Emily-Rose Cripps<span>.</span></span>
-                <span className="logo-copy-inner">Graphic Design and Illustration</span>
+                <span className="logo-copy-inner">Graphic Designer, Illustrator & Maker</span>
               </LogoCopy>
           </div>
           <div className={styles.erdInlineNavContainer}>
