@@ -12,6 +12,9 @@
     position: relative;
     margin-bottom: 15px;
 
+    max-height:351px;
+    overflow:hidden;
+
     span {
         position: absolute;
         right: 10px;

@@ -6,7 +6,7 @@
 
     text-align: center;
 
-    height: 220px;
+    height: 180px;
 
     display:flex;
 
@@ -18,27 +18,13 @@
 
 }
 
-.thorns-desktop-left {
-    height: 220px;
-    width: 594px;
-    background-image: url(./images/left-thorns-set.png);
-    background-position: top right;
-}
-
-.thorns-desktop-right {
-    height: 220px;
-    width: 556px;
-    background-image: url(./images/right-thorns-set.png);
-    background-position: top left;
-}
-
 .footer-content {
     text-align:center;
     padding: 30px 10px 0px 10px;
     height: 180px;
     width: 350px;
 
-    margin: 20px;
+    margin: 0px;
 
 
     border-radius:5px;
