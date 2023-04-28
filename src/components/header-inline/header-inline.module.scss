@@ -81,6 +81,11 @@
     @media (max-width:1199px) {
         display:none;
     }
+
+    svg {
+        width: 22.5px;
+        max-width: 22.5px;
+    }
 }
 
 .body-no-scroll {
