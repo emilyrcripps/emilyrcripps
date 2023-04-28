@@ -20,7 +20,7 @@
     .feature-banner-header {
         position: absolute;
         left: 50px;
-        bottom: 85px;
+        bottom: 60px;
         max-width: 50%;
         font-size:25px;
         font-weight:bold;
@@ -34,7 +34,7 @@
         z-index: 5;
 
         @media(max-width: 767px) {
-            bottom: 160px;
+            bottom: 90px;
             left: 20px;
             margin: 10px 0px 15px 0px;
             max-width: 100%;
@@ -68,7 +68,7 @@
         @media(max-width: 767px) {
             font-size:15px;
             left: 20px;
-            bottom: 80px;
+            bottom: 50px;
             max-width: 90%;
             padding: 0px;
         }
@@ -112,7 +112,7 @@
         position: absolute;
         left: 0px;
         bottom: 0px;
-        opacity: 50%;
+        opacity: 70%;
 
         background: -moz-linear-gradient(25deg, black 0%, transparent 70%);
         /* FF3.6+ */

@@ -8,14 +8,14 @@ const FeatureBanner = ({ title, linkPage, imagePath, imageAlt, target }) => {
   
   const data = useStaticQuery(graphql`
     query {
-      imageDesktop: file(relativePath: { eq: "home/feature-banner/desktop/image.jpeg" }) {
+      imageDesktop: file(relativePath: { eq: "home/feature-banner/desktop/image.jpg" }) {
         childImageSharp {
           fixed(height: 450, width: 1296, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
       },
-      imageMobile: file(relativePath: { eq: "home/feature-banner/mobile/image.jpeg" }) {
+      imageMobile: file(relativePath: { eq: "home/feature-banner/mobile/image.jpg" }) {
         childImageSharp {
           fixed(height: 450, width: 500, quality: 100) {
             ...GatsbyImageSharpFixed
@@ -49,12 +49,11 @@ const FeatureBanner = ({ title, linkPage, imagePath, imageAlt, target }) => {
                 fixed={sources}
                 alt="Giraffe About Town"
               />
-              <AniLink paintDrip to='/portfolio/competitions/giraffe-about-town' hex="#5fc0c5" duration={0.6} target={target}>
+              <AniLink paintDrip to='/portfolio/were-not-scavengers' hex="#5fc0c5" duration={0.6} target={target}>
                       
                       <span>{title}</span>
-                      <div className={styles.featureBannerHeader}>Giraffe About Town</div>
-                      <div className={styles.featureBannerCopy}>Emily's giraffe design wins sponsor for Edinburgh's 'Giraffe About Town'.
-                      <br/>Follow along on Instagram to keep up with progress.
+                      <div className={styles.featureBannerHeader}>We're Not Scavengers</div>
+                      <div className={styles.featureBannerCopy}>A proposed new exhibition showcasing the true lives of Spotted Hyena.
                       </div>
                       <div className={styles.featureBannerLink}>
                         <span>Read More...</span>
