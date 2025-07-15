@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import logo from './inline-logo.png'
+import logo from './emily-rose-logo.svg'
 import * as styles from './header-inline.module.scss'
 import styled from 'styled-components'
 import { Link, useStaticQuery, graphql } from 'gatsby'
@@ -150,8 +150,97 @@ const LogoCopy = styled.span`
   }
 `
 
+const ResponsiveLogo = styled.img`
+  width: 500px;
+  
+  @media (max-width: 768px) {
+    width: 400px;
+  }
+`
+
+const SplashOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.5s ease-in-out;
+  opacity: ${({show}) => show ? '1' : '0'};
+  pointer-events: ${({show}) => show ? 'auto' : 'none'};
+`
+
+const SplashContent = styled.div`
+  text-align: center;
+  max-width: 800px;
+  padding: 2rem;
+  
+  @media (max-width: 768px) {
+    max-width: 450px;
+  }
+
+  h1 {
+    font-family: 'Vidaloka', serif;
+    font-size: 2.5rem;
+    color: #5fc0c5;
+    margin-bottom: 1rem;
+    
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+  
+  p {
+    font-size: 1.2rem;
+    color: #706F6F;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+`
+
+const SplashLogo = styled.img`
+  width: 600px;
+  margin-bottom: 2rem;
+  
+  @media (max-width: 768px) {
+    width: 400px;
+  }
+`
+
+const ContinueButton = styled.button`
+  background: #5fc0c5;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  
+  &:hover {
+    background: #4a9ba0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(95, 192, 197, 0.3);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+`
+
 const HeaderInline = ({ location }) => {
   const [nav, showNav] = useState(false);
+  const [showSplash, setShowSplash] = useState(true);
 
   const data = useStaticQuery(graphql`
     query {
@@ -166,6 +255,19 @@ const HeaderInline = ({ location }) => {
       }
     }
   `)
+
+  // Check if user has already seen the splash screen in this session
+  React.useEffect(() => {
+    const hasSeenSplash = sessionStorage.getItem('hasSeenSplash');
+    if (hasSeenSplash) {
+      setShowSplash(false);
+    }
+  }, []);
+
+  const handleContinue = () => {
+    sessionStorage.setItem('hasSeenSplash', 'true');
+    setShowSplash(false);
+  };
 
   if (!nav) {
     if (typeof document !== `undefined`) {
@@ -200,46 +302,64 @@ const HeaderInline = ({ location }) => {
   }
 
   return (
-    <div className={styles.erdHeader}>
-      <MenuIcon nav={nav} onClick={() => toggleNav(!nav)} name="Menu">
-        <div />
-        <div />
-        <div />
-      </MenuIcon>
-      <div className="container">
-        <div className={styles.erdLogoWrapper}>
-          <div className={styles.erdLogoContainer}>
-              <Link to="/">
-                <LogoImg isLogoAnimated={true}
-                    alt="Emily-Rose Design"
+    <>
+      <SplashOverlay show={showSplash}>
+        <SplashContent>
+          <SplashLogo 
+            src={logo}
+            alt="Emily-Rose Design"
+          />
+          <h1>New Branding Coming Soon!</h1>
+          <p>
+            Emily's exciting new branding and portfolio website will be launching very soon. 
+            This current site will be replaced with a fresh, modern design showcasing her latest work.
+          </p>
+          <p>
+            You can continue to browse the current portfolio below, or check back soon for the new experience!
+          </p>
+          <ContinueButton onClick={handleContinue}>
+            Continue to Current Site
+          </ContinueButton>
+        </SplashContent>
+      </SplashOverlay>
+      
+      <div className={styles.erdHeader}>
+        <MenuIcon nav={nav} onClick={() => toggleNav(!nav)} name="Menu">
+          <div />
+          <div />
+          <div />
+        </MenuIcon>
+        <div className="container">
+          <div className={styles.erdLogoWrapper}>
+            <div className={styles.erdLogoContainer}>
+                <Link to="/" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '40px' }}>
+                  <ResponsiveLogo 
                     src={logo}
-                />
-              </Link>
-              <LogoCopy isLogoCopyAnimated={true}>
-                <span className="logo-copy-name">Emily-Rose Cripps<span>.</span></span>
-                <span className="logo-copy-inner">Graphic Designer, Illustrator & Maker</span>
-              </LogoCopy>
-          </div>
-          <div className={styles.erdInlineNavContainer}>
-              <ul>
-                <li><Link getProps={isActive} to="/">Home</Link></li>
-                <li><Link getProps={isActive} to="/portfolio/">Portfolio</Link></li>
-                <li><Link getProps={isActive} to="/contact/">Contact</Link></li>
-                <li><Link getProps={isActive} target="_blank" to={data.site.siteMetadata.etsyUrl}><FontAwesomeIcon icon={faShoppingBasket} name="Shop"/> Shop</Link></li>
-              </ul>
-          </div>
+                    alt="Emily-Rose Design"
+                  />
+                </Link>
+            </div>
+            <div className={styles.erdInlineNavContainer}>
+                <ul>
+                  <li><Link getProps={isActive} to="/">Home</Link></li>
+                  <li><Link getProps={isActive} to="/portfolio/">Portfolio</Link></li>
+                  <li><Link getProps={isActive} to="/contact/">Contact</Link></li>
+                  <li><Link getProps={isActive} target="_blank" to={data.site.siteMetadata.etsyUrl}><FontAwesomeIcon icon={faShoppingBasket} name="Shop"/> Shop</Link></li>
+                </ul>
+            </div>
 
+          </div>
+          <MenuLinks nav={nav}>
+            <ul>
+              <li><AniLink paintDrip hex="#5fc0c5" duration={0.6} to="/">Home</AniLink></li>
+              <li><AniLink paintDrip hex="#5fc0c5" duration={0.6} to="/portfolio">Portfolio</AniLink></li>
+              <li><AniLink paintDrip hex="#5fc0c5" duration={0.6} to="/contact">Contact</AniLink></li>
+              <li><AniLink paintDrip hex="#5fc0c5" duration={0.6} target="_blank" to={data.site.siteMetadata.etsyUrl}>Shop</AniLink></li>
+            </ul>
+          </MenuLinks>
         </div>
-        <MenuLinks nav={nav}>
-          <ul>
-            <li><AniLink paintDrip hex="#5fc0c5" duration={0.6} to="/">Home</AniLink></li>
-            <li><AniLink paintDrip hex="#5fc0c5" duration={0.6} to="/portfolio">Portfolio</AniLink></li>
-            <li><AniLink paintDrip hex="#5fc0c5" duration={0.6} to="/contact">Contact</AniLink></li>
-            <li><AniLink paintDrip hex="#5fc0c5" duration={0.6} target="_blank" to={data.site.siteMetadata.etsyUrl}>Shop</AniLink></li>
-          </ul>
-        </MenuLinks>
       </div>
-    </div>
+    </>
   )
 }
 
